@@ -19,7 +19,10 @@ class TranslateController < ApplicationController
   end
 
   def mark
-    `echo #{params[:expect_tgt]} > /home/trinhphong/translate_system/expect/expect`
+    ef = File.open("/home/trinhphong/translate_system/expect/expect", "w+")
+    ef.write params[:expect_tgt]
+    ef.close
+    # `echo #{} > /home/trinhphong/translate_system/expect/expect`
     `~/moses/mosesdecoder/scripts/generic/multi-bleu.perl -lc /home/trinhphong/translate_system/expect/expect < /home/trinhphong/Desktop/nmt/run/output_infer > /home/trinhphong/translate_system/expect/bleu.nmt`
     `~/moses/mosesdecoder/scripts/generic/multi-bleu.perl -lc /home/trinhphong/translate_system/expect/expect < /home/trinhphong/moses/run/output_infer > /home/trinhphong/translate_system/expect/bleu.smt`
     redirect_to root_path
