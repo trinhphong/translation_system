@@ -1,16 +1,16 @@
 <div class="container main-container">
   <div class="row">
-    <%= form_tag translating_path do %>
+    <%= form_tag translating_cn_vi_path do %>
       <div class="col-md-5 src-field">
         <div class="row">
           <div class="col-md-6">
             <div class="form-group">
-              <%= link_to 'English-Vietnamese', '#', class: 'btn btn-default form-control', readonly: true %>
+              <%= link_to 'Chinese-Vietnamese', '#', class: 'btn btn-default form-control', readonly: true %>
             </div>
           </div>
           <div class="col-md-6">
             <div class="form-group">
-              <%= link_to 'Chinese-Vietnamese', cn_to_vi_path, class: 'btn btn-default form-control' %>
+              <%= link_to 'English-Vietnamese', root_path, class: 'btn btn-default form-control' %>
             </div>
           </div>
         </div>
@@ -22,7 +22,7 @@
       <div class="col-md-1 button-action-group">
         <%= submit_tag 'Run', class: 'btn btn-primary form-control run-button' %>
     <% end %>
-        <%= form_tag clearing_path do %>
+        <%= form_tag clearing_cn_vi_path do %>
           <%= submit_tag 'Clear', class: 'btn btn-danger form-control'  %>
         <% end %>
       </div>
@@ -36,7 +36,7 @@
           </div>
         </div>
       </div>
-      <%= form_tag marking_path do %>
+      <%= form_tag marking_cn_vi_path do %>
         <div class="row">
           <div class="col-md-12">
             <div class="input-group">

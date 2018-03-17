@@ -7,11 +7,14 @@
 
 .my-text-field,
 .run-button,
-.mark-button, {
+.mark-button {
   height: 100px !important;
 }
 
-.src-field,
+.src-field {
+  padding: 50px 0;
+}
+
 .button-action-group {
   padding: 100px 0;
 }

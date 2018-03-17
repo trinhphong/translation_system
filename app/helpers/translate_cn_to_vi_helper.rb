@@ -1,0 +1,2 @@
+module TranslateCnToViHelper
+end
