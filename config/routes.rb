@@ -6,4 +6,9 @@ Rails.application.routes.draw do
   post 'translating',     to: 'translate#translate'
   post 'clearing',        to: 'translate#clear'
   post 'marking',         to: 'translate#mark'
+
+  get  'cn-to-vi',          to: 'translate_cn_to_vi#index'
+  post 'translating_cn_vi', to: 'translate_cn_to_vi#translate'
+  post 'clearing_cn_vi',    to: 'translate_cn_to_vi#clear'
+  post 'marking_cn_vi',     to: 'translate_cn_to_vi#mark'
 end
