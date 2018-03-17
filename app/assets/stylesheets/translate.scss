@@ -2,5 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .main-container {
-  padding: 15%;
+  padding: 5%;
+}
+
+.my-text-field,
+.run-button,
+.mark-button, {
+  height: 100px !important;
+}
+
+.src-field,
+.button-action-group {
+  padding: 100px 0;
 }

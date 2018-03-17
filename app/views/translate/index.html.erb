@@ -1,14 +1,14 @@
 <div class="container main-container">
   <div class="row">
     <%= form_tag translating_path do %>
-      <div class="col-md-5">
+      <div class="col-md-5 src-field">
         <div class="input-group">
           <span class="input-group-addon" id="basic-addon1">SRC</span>
-          <%= text_field_tag :src, @src_nmt == '-' ? '' : @src_nmt, class: 'form-control' %>
+          <%= text_area_tag :src, @src_nmt == '-' ? '' : @src_nmt, class: 'form-control my-text-field' %>
         </div>
       </div>
-      <div class="col-md-1">
-        <%= submit_tag 'Run', class: 'btn btn-primary form-control' %>
+      <div class="col-md-1 button-action-group">
+        <%= submit_tag 'Run', class: 'btn btn-primary form-control run-button' %>
     <% end %>
         <%= form_tag clearing_path do %>
           <%= submit_tag 'Clear', class: 'btn btn-danger form-control'  %>
@@ -19,7 +19,7 @@
         <div class="col-md-12">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">NMT</span>
-            <%= text_field_tag :tgt_nmt, @tgt_nmt == '-' ? '' : @tgt_nmt, class: 'form-control', readonly: true %>
+            <%= text_area_tag :tgt_nmt, @tgt_nmt == '-' ? '' : @tgt_nmt, class: 'form-control my-text-field', readonly: true %>
             <span class="input-group-addon" id="basic-addon2"><%= @bleu_nmt %></span>
           </div>
         </div>
@@ -29,9 +29,9 @@
           <div class="col-md-12">
             <div class="input-group">
               <span class="input-group-addon" id="basic-addon3">EXP</span>
-              <%= text_field_tag :expect_tgt, @expect_tgt == '-' ? '' : @expect_tgt, class: 'form-control' %>
+              <%= text_area_tag :expect_tgt, @expect_tgt == '-' ? '' : @expect_tgt, class: 'form-control my-text-field' %>
               <span class="input-group-btn">
-                <%= submit_tag 'Mark', class: 'btn btn-success'  %>
+                <%= submit_tag 'Mark', class: 'btn btn-success mark-button'  %>
               </span>
             </div>
           </div>
@@ -43,7 +43,7 @@
         <div class="col-md-12">
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon4">SMT</span>
-            <%= text_field_tag :tgt_smt, @tgt_smt == '-' ? '' : @tgt_smt, class: 'form-control', readonly: true %>
+            <%= text_area_tag :tgt_smt, @tgt_smt == '-' ? '' : @tgt_smt, class: 'form-control my-text-field', readonly: true %>
             <span class="input-group-addon" id="basic-addon5"><%= @bleu_smt %></span>
           </div>
         </div>
