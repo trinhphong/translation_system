@@ -1,0 +1,53 @@
+<div class="container main-container">
+  <div class="row">
+    <%= form_tag translating_path do %>
+      <div class="col-md-5">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1">SRC</span>
+          <%= text_field_tag :src, @src_nmt == '-' ? '' : @src_nmt, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <%= submit_tag 'Run', class: 'btn btn-primary form-control' %>
+    <% end %>
+        <%= form_tag clearing_path do %>
+          <%= submit_tag 'Clear', class: 'btn btn-danger form-control'  %>
+        <% end %>
+      </div>
+    <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">NMT</span>
+            <%= text_field_tag :tgt_nmt, @tgt_nmt == '-' ? '' : @tgt_nmt, class: 'form-control', readonly: true %>
+            <span class="input-group-addon" id="basic-addon2"><%= @bleu_nmt %></span>
+          </div>
+        </div>
+      </div>
+      <%= form_tag marking_path do %>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="input-group">
+              <span class="input-group-addon" id="basic-addon3">EXP</span>
+              <%= text_field_tag :expect_tgt, @expect_tgt == '-' ? '' : @expect_tgt, class: 'form-control' %>
+              <span class="input-group-btn">
+                <%= submit_tag 'Mark', class: 'btn btn-success'  %>
+              </span>
+            </div>
+          </div>
+          <div class="col-md-2">
+          </div>
+        </div>
+      <% end %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon4">SMT</span>
+            <%= text_field_tag :tgt_smt, @tgt_smt == '-' ? '' : @tgt_smt, class: 'form-control', readonly: true %>
+            <span class="input-group-addon" id="basic-addon5"><%= @bleu_smt %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
